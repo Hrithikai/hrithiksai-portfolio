@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hrithik Sai N | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg,#3b82f6,#9333ea);
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #1e293b;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-tile {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .project-tile:hover {
+      transform: scale(1.05);
+    }
+    .project-tile img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-info {
+      padding: 15px;
+    }
+    .contact {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .contact a {
+      color: #3b82f6;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hrithik Sai N</h1>
+    <p>Software Engineering Student | AI & Cybersecurity Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Software Engineering student with hands-on experience in Python, Java, and software engineering practices. 
+      Skilled in developing AI, Machine Learning, Cybersecurity, and UI/UX solutions with real-world impact.
+    </p>
+    <h3>Education</h3>
+    <p>Integrated M.Tech (Software Engineering) | Vellore Institute of Technology (2021 – Present) | CGPA: 7.57</p>
+
+    <h3>Skills</h3>
+    <div class="skills">
+      <div>Python</div>
+      <div>Java</div>
+      <div>AI & ML</div>
+      <div>Computer Vision</div>
+      <div>Cybersecurity</div>
+      <div>UI/UX Design</div>
+      <div>Firebase</div>
+      <div>Power BI</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p><strong>Software Intern – Code-Wizard.AI</strong> (May 2024 – June 2024)</p>
+    <ul>
+      <li>Designed 5+ UML diagrams to improve workflows.</li>
+      <li>Developed 2 websites & 3 chatbot prototypes in Figma (+30% engagement).</li>
+      <li>Built user-friendly database interface reducing manual effort.</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-tile">
+        <img src="https://via.placeholder.com/400x200" alt="Traffic to Power">
+        <div class="project-info">
+          <h3>Traffic to Power – Smart Toll</h3>
+          <p>AI-powered toll & energy harvesting system.</p>
+        </div>
+      </div>
+      <div class="project-tile">
+        <img src="https://via.placeholder.com/400x200" alt="Sentiment Analysis">
+        <div class="project-info">
+          <h3>Sentiment Analysis</h3>
+          <p>Deep learning on movie reviews with Word2Vec & XGBoost.</p>
+        </div>
+      </div>
+      <div class="project-tile">
+        <img src="https://via.placeholder.com/400x200" alt="Facial Recognition">
+        <div class="project-info">
+          <h3>Facial Recognition & Liveness</h3>
+          <p>95.5% accurate recognition + EAR-based liveness detection.</p>
+        </div>
+      </div>
+      <div class="project-tile">
+        <img src="https://via.placeholder.com/400x200" alt="Perception AI">
+        <div class="project-info">
+          <h3>Perception Track.AI</h3>
+          <p>YOLOv8 + LSTM for real-time tracking & anomaly alerts.</p>
+        </div>
+      </div>
+      <div class="project-tile">
+        <img src="https://via.placeholder.com/400x200" alt="IDS System">
+        <div class="project-info">
+          <h3>Intrusion Detection System</h3>
+          <p>Java-based anomaly detection with Firebase & Flask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:hrithiksai007@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/hrithik-sai-n">LinkedIn</a>
+      <a href="https://github.com/Hrithikai">GitHub</a>
+    </div>
+  </section>
+</body>
+</html>
