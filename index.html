@@ -7,23 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;900&family=SF+Pro+Text:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #007aff;
-            --primary-dark: #0051d4;
-            --accent: #34c759;
-            --accent-dark: #28a745;
-            --bg-primary: #000000;
-            --bg-secondary: #1c1c1e;
-            --bg-tertiary: #2c2c2e;
-            --bg-card: rgba(28, 28, 30, 0.8);
-            --text-primary: #ffffff;
-            --text-secondary: #8e8e93;
-            --text-tertiary: #636366;
-            --border: rgba(255, 255, 255, 0.08);
-            --gradient-primary: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
-            --gradient-accent: linear-gradient(135deg, #34c759 0%, #30d158 100%);
-            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-heavy: 0 16px 32px rgba(0, 0, 0, 0.2);
+            --primary: #0A192F;
+            --secondary: #00B8FF;
+            --accent: #5CE1E6;
+            --bg-primary: #020C1B;
+            --bg-secondary: #0A192F;
+            --bg-tertiary: #112240;
+            --bg-card: rgba(17, 34, 64, 0.8);
+            --text-primary: #E6F1FF;
+            --text-secondary: #8892B0;
+            --text-tertiary: #495670;
+            --border: rgba(92, 225, 230, 0.1);
+            --gradient-primary: linear-gradient(135deg, #00B8FF 0%, #5CE1E6 100%);
+            --gradient-accent: linear-gradient(135deg, #5CE1E6 0%, #00B8FF 100%);
+            --shadow-glow: 0 0 30px rgba(0, 184, 255, 0.3);
+            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-heavy: 0 16px 48px rgba(0, 0, 0, 0.6);
         }
 
         * {
@@ -44,7 +43,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Clean Background */
+        /* Premium Background with Glow */
         .bg-gradient {
             position: fixed;
             top: 0;
@@ -53,8 +52,8 @@
             height: 100%;
             z-index: -1;
             background: 
-                radial-gradient(ellipse at top, rgba(0, 122, 255, 0.1) 0%, transparent 60%),
-                radial-gradient(ellipse at bottom right, rgba(52, 199, 89, 0.08) 0%, transparent 60%);
+                radial-gradient(ellipse at top left, rgba(0, 184, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(92, 225, 230, 0.1) 0%, transparent 50%);
         }
 
         /* Premium Navigation */
@@ -62,7 +61,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(2, 12, 27, 0.85);
             backdrop-filter: saturate(180%) blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
@@ -82,7 +81,7 @@
             font-family: 'SF Pro Display', sans-serif;
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--accent);
         }
 
         .nav-links {
@@ -100,7 +99,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--accent);
         }
 
         /* Hero Section */
@@ -138,7 +137,8 @@
             position: relative;
             overflow: hidden;
             background: var(--gradient-primary);
-            padding: 3px;
+            padding: 4px;
+            box-shadow: var(--shadow-glow);
         }
 
         .hero-image img {
@@ -167,7 +167,7 @@
 
         .typing-text {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 2rem;
             min-height: 2.5rem;
             font-weight: 500;
@@ -196,7 +196,7 @@
             align-items: center;
             padding: 0.875rem 2rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -207,24 +207,24 @@
 
         .btn-primary {
             background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-medium);
+            color: var(--bg-primary);
+            box-shadow: var(--shadow-glow);
         }
 
         .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-heavy);
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(0, 184, 255, 0.5);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--primary);
-            border: 1.5px solid var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
-            color: white;
+            background: var(--secondary);
+            color: var(--bg-primary);
         }
 
         /* Section Styles */
@@ -243,6 +243,7 @@
             text-align: center;
             margin-bottom: 4rem;
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         /* Skills Section */
@@ -259,12 +260,13 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .skill-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-medium);
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+            box-shadow: 0 8px 32px rgba(0, 184, 255, 0.2);
         }
 
         .skill-icon {
@@ -277,6 +279,7 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
+            box-shadow: var(--shadow-glow);
         }
 
         .skill-card h3 {
@@ -300,7 +303,7 @@
         }
 
         .skill-list li::before {
-            content: '•';
+            content: '▹';
             color: var(--accent);
             position: absolute;
             left: 0;
@@ -333,6 +336,12 @@
             border-radius: 16px;
             padding: 2rem;
             margin-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 8px 32px rgba(0, 184, 255, 0.2);
         }
 
         .timeline-item::before {
@@ -345,10 +354,11 @@
             background: var(--accent);
             border-radius: 50%;
             border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 15px var(--accent);
         }
 
         .timeline-date {
-            color: var(--primary);
+            color: var(--secondary);
             font-weight: 600;
             font-size: 0.875rem;
             margin-bottom: 0.5rem;
@@ -382,22 +392,31 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-heavy);
+            transform: translateY(-8px);
+            border-color: var(--secondary);
+            box-shadow: 0 16px 48px rgba(0, 184, 255, 0.3);
         }
 
         .project-image {
             width: 100%;
-            height: 200px;
+            height: 220px;
             background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-content {
@@ -428,9 +447,9 @@
 
         .tech-tag {
             background: var(--bg-tertiary);
-            color: var(--text-primary);
+            color: var(--accent);
             padding: 0.25rem 0.75rem;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 500;
             border: 1px solid var(--border);
@@ -442,7 +461,7 @@
         }
 
         .project-link {
-            color: var(--primary);
+            color: var(--secondary);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -450,7 +469,7 @@
         }
 
         .project-link:hover {
-            color: var(--primary-dark);
+            color: var(--accent);
         }
 
         /* Contact Section */
@@ -478,7 +497,7 @@
             gap: 0.5rem;
             color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
             padding: 1rem 1.5rem;
             background: var(--bg-secondary);
             border-radius: 12px;
@@ -486,8 +505,10 @@
         }
 
         .contact-link:hover {
-            color: var(--primary);
+            color: var(--accent);
             background: var(--bg-tertiary);
+            border-color: var(--secondary);
+            box-shadow: 0 4px 16px rgba(0, 184, 255, 0.2);
         }
 
         /* Footer */
@@ -550,7 +571,7 @@
 
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -558,12 +579,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--bg-tertiary);
-            border-radius: 3px;
+            background: var(--secondary);
+            border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-tertiary);
+            background: var(--accent);
         }
     </style>
 </head>
@@ -588,11 +609,14 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-image">
-                <!-- To add your photo: 
-                     1. Upload your photo to your GitHub repository in a folder called 'images'
-                     2. Replace the src below with: https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/images/your-photo.jpg
-                     Example: https://raw.githubusercontent.com/Hrithikai/portfolio/main/images/hrithik.jpg -->
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%231c1c1e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%238e8e93' font-size='14' font-family='SF Pro Text'%3EYour Photo%3C/text%3E%3C/svg%3E" alt="Hrithik Sai N">
+                <!-- 
+                📸 PROFILE PHOTO LOCATION:
+                Save your photo as: profile-photo.jpg
+                Upload it to the root of your GitHub repository
+                Then replace src below with: profile-photo.jpg
+                Recommended size: 500x500px, square format
+                -->
+                <img src="profile pic.jpg" alt="Hrithik Sai N" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27180%27 height=%27180%27 viewBox=%270 0 180 180%27%3E%3Crect width=%27180%27 height=%27180%27 fill=%27%230A192F%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 fill=%27%235CE1E6%27 font-size=%2714%27 font-family=%27SF Pro Text%27%3EYour Photo%3C/text%3E%3C/svg%3E'">
             </div>
             <h1>Hi, I'm <span class="accent">Hrithik Sai N</span></h1>
             <div class="typing-text" id="typing"></div>
@@ -690,12 +714,18 @@
     <section id="projects" class="section fade-in">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
+            
+            <!-- PROJECT 1: Traffic to Power -->
             <div class="project-card">
-                <!-- To add project images:
-                     1. Upload project images to your GitHub repository in 'images/projects/' folder
-                     2. Replace the div below with: <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO_NAME/main/images/projects/traffic-power.jpg" alt="Traffic to Power" style="width:100%;height:100%;object-fit:cover;">
-                     Example: <img src="https://raw.githubusercontent.com/Hrithikai/portfolio/main/images/projects/traffic-power.jpg" alt="Traffic to Power" style="width:100%;height:100%;object-fit:cover;"> -->
-                <div class="project-image">⚡</div>
+                <!-- 
+                📸 PROJECT IMAGE LOCATION:
+                Save as: project-traffic-power.jpg
+                Upload to repository root
+                Recommended size: 800x500px (landscape)
+                -->
+                <div class="project-image">
+                    <img src="project-traffic-power.jpg" alt="Traffic to Power" onerror="this.parentElement.innerHTML='⚡'">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Traffic to Power</h3>
                     <p class="project-description">Innovative smart toll system integrated with energy harvesting technology to convert vehicular movement into renewable energy while managing traffic flow efficiently.</p>
@@ -710,8 +740,17 @@
                 </div>
             </div>
 
+            <!-- PROJECT 2: Sentiment Analysis -->
             <div class="project-card">
-                <div class="project-image">🎬</div>
+                <!-- 
+                📸 PROJECT IMAGE LOCATION:
+                Save as: project-sentiment-analysis.jpg
+                Upload to repository root
+                Recommended size: 800x500px (landscape)
+                -->
+                <div class="project-image">
+                    <img src="project-sentiment-analysis.jpg" alt="Sentiment Analysis" onerror="this.parentElement.innerHTML='🎬'">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Sentiment Analysis Engine</h3>
                     <p class="project-description">Deep learning model for movie review sentiment analysis using advanced NLP techniques and neural networks to classify emotions with high accuracy.</p>
@@ -727,8 +766,17 @@
                 </div>
             </div>
 
+            <!-- PROJECT 3: Smart Home Facial Recognition -->
             <div class="project-card">
-                <div class="project-image">🏠</div>
+                <!-- 
+                📸 PROJECT IMAGE LOCATION:
+                Save as: project-facial-recognition.jpg
+                Upload to repository root
+                Recommended size: 800x500px (landscape)
+                -->
+                <div class="project-image">
+                    <img src="project-facial-recognition.jpg" alt="Smart Home Facial Recognition" onerror="this.parentElement.innerHTML='🏠'">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Smart Home Facial Recognition</h3>
                     <p class="project-description">Advanced security system achieving 95.5% accuracy with liveness detection, preventing spoofing attacks using computer vision and machine learning.</p>
@@ -744,8 +792,17 @@
                 </div>
             </div>
 
+            <!-- PROJECT 4: Perception Track.AI -->
             <div class="project-card">
-                <div class="project-image">👁️</div>
+                <!-- 
+                📸 PROJECT IMAGE LOCATION:
+                Save as: project-perception-track.jpg
+                Upload to repository root
+                Recommended size: 800x500px (landscape)
+                -->
+                <div class="project-image">
+                    <img src="project-perception-track.jpg" alt="Perception Track.AI" onerror="this.parentElement.innerHTML='👁️'">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Perception Track.AI</h3>
                     <p class="project-description">Real-time object tracking system combining YOLOv8 and LSTM networks with a 3-second alert mechanism for enhanced surveillance and monitoring.</p>
@@ -761,8 +818,17 @@
                 </div>
             </div>
 
+            <!-- PROJECT 5: Intrusion Detection System -->
             <div class="project-card">
-                <div class="project-image">🔒</div>
+                <!-- 
+                📸 PROJECT IMAGE LOCATION:
+                Save as: project-intrusion-detection.jpg
+                Upload to repository root
+                Recommended size: 800x500px (landscape)
+                -->
+                <div class="project-image">
+                    <img src="project-intrusion-detection.jpg" alt="Intrusion Detection System" onerror="this.parentElement.innerHTML='🔒'">
+                </div>
                 <div class="project-content">
                     <h3 class="project-title">Intrusion Detection System</h3>
                     <p class="project-description">ML-powered security system using Isolation Forest algorithm with Flask-Firebase dashboard for real-time network threat detection and monitoring.</p>
@@ -777,6 +843,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -875,9 +942,9 @@
         function updateNavbar() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+                nav.style.background = 'rgba(2, 12, 27, 0.95)';
             } else {
-                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+                nav.style.background = 'rgba(2, 12, 27, 0.85)';
             }
         }
 
